@@ -42,6 +42,10 @@ namespace extensionstest2
 			// Create a message.
 			using (var emailMessage = new EmailMessage(this.Configuration.SmtpConfiguration))
 			{
+				// From.
+				string emailFrom = "xxx@xxx.com";
+				emailMessage.SetFrom(new EmailAddress(emailFrom, "M-Files Sender"));
+
 				// To.
 				emailMessage.AddRecipient(AddressType.To, "craig.hawker@m-files.com");
 
